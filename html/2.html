@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Para Você</title>
+ 
+<!-- Fonte medieval -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=IM+Fell+English&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at center, #2c0f1a, #12050a 80%);
+    color: #f8e6d2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'IM Fell English', serif;
+    overflow: hidden;
+}
+
+/* Fundo com leve textura simulada */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("https://www.transparenttextures.com/patterns/old-wall.png");
+    opacity: 0.15;
+}
+
+/* Área do poema */
+.poem-container {
+    max-width: 700px;
+    padding: 60px;
+    text-align: center;
+    position: relative;
+}
+
+/* Título */
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 40px;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+    color: #ffb6c1;
+    text-shadow: 0 0 15px rgba(255, 182, 193, 0.4);
+}
+
+/* Poema */
+.poem {
+    font-size: 20px;
+    line-height: 1.8;
+    white-space: pre-line;
+    color: #f3d9c5;
+}
+
+/* Ornamento */
+.ornament {
+    margin-top: 40px;
+    font-size: 30px;
+    color: #ffb6c1;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+/* Vinheta nas bordas */
+body::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 200px rgba(0,0,0,0.9);
+}
+</style>
+</head>
+
+<body>
+
+<div class="poem-container">
+
+    <h1>Para Misa</h1>
+
+    <div class="poem">
+    Meu amor, eu estou escrevendo isso para voce, porque eu quero que voce saiba o quanto voce é importante para mim.
+    Eu te amo mais do que as palavras podem expressar, e eu quero passar o resto da minha vida ao seu lado.
+    Você e a garota mais linda que eu já vi, sua beleza é como olhar o por do sol no fim da tarde
+    e eu me sinto tão sortudo por ter voce na minha vida. Voce foi a pessoa que mesmo nos dias tristes me fez ficar feliz
+    Te amo como o ceu estrelado, Como as luas de saturno, como o mar infinito, como o universo inteiro
+    Cada momento junto de voce é como um sonho que se torna realidade, e eu quero continuar sonhando com voce para sempre.
+    AMO VOCE
+    
+
+     
+
+    </div>
+
+    <div class="ornament">✧ 💗 ✧</div>
+
+</div>
+
+</body>
+</html>

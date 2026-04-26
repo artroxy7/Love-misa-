@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Love U Misa 💗</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: #0a0a0a;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* CORAÇÃO */
+svg {
+    width: 80vw;
+    height: 80vw;
+    max-width: 700px;
+    max-height: 700px;
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
+    z-index: 2;
+}
+
+svg:hover {
+    transform: scale(1.1);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.heart {
+    fill: #ff1744;
+    filter: drop-shadow(0 0 25px #ff1744);
+}
+
+text {
+    fill: #ff00ff;
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+/* NOME */
+.center-name {
+    position: absolute;
+    color: white;
+    font-size: 5vw;
+    font-weight: bold;
+    text-shadow: 0 0 20px #ff00ff;
+    z-index: 3;
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+}
+
+/* PARTÍCULAS */
+.particle {
+    position: absolute;
+    color: #ff4d6d;
+    font-size: 20px;
+    animation: floatUp linear forwards;
+    user-select: none;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-800px) scale(1.5);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="center-name">   </div>
+
+<svg viewBox="0 0 500 500" id="heartSVG">
+
+    <defs>
+        <path id="heartPath"
+              d="M250 400 
+                 C 100 250, 50 150, 150 100
+                 C 220 60, 250 140, 250 140
+                 C 250 140, 280 60, 350 100
+                 C 450 150, 400 250, 250 400 Z"/>
+    </defs>
+
+    <use href="#heartPath" class="heart"/>
+
+    <text>
+        <textPath href="#heartPath">
+            LOVE U MISA 💗 LOVE U MISA 💗 LOVE U MISA 💗 LOVE U MISA 💗LOVE U MISA 💗LOVE U MISA 💗
+        </textPath>
+    </text>
+
+</svg>
+
+<script>
+// garante que carregou tudo
+document.addEventListener("DOMContentLoaded", () => {
+
+    const heart = document.getElementById("heartSVG");
+
+    heart.addEventListener("click", (e) => {
+
+        // animação
+        heart.style.animation = "none";
+        heart.style.transform = "scale(1.3)";
+        
+        // partículas explosão
+        for (let i = 0; i < 25; i++) {
+            createParticle();
+        }
+
+        // redireciona depois
+        setTimeout(() => {
+            window.location.href = "2.html"; //  
+        }, 500);
+    });
+
+    function createParticle() {
+        const particle = document.createElement("div");
+        particle.classList.add("particle");
+        particle.innerHTML = "💗";
+
+        particle.style.left = Math.random() * window.innerWidth + "px";
+        particle.style.bottom = "0px";
+        particle.style.fontSize = (15 + Math.random() * 25) + "px";
+        particle.style.animationDuration = (3 + Math.random() * 2) + "s";
+
+        document.body.appendChild(particle);
+
+        setTimeout(() => {
+            particle.remove();
+        }, 5000);
+    }
+
+    // partículas contínuas
+    setInterval(() => {
+        createParticle();
+    }, 300);
+
+});
+</script>
+
+</body>
+</html>
